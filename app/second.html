@@ -1,0 +1,56 @@
+<div class="intro">
+    <h3>应用列表</h3>
+    <p>首页／应用列表</p>
+</div>
+<div class="con-wrap">
+    <span class="create" ng-click="myShow = false">+添加应用</span>
+    <table>
+        <tr>
+            <th>应用名称</th>
+            <th>APP ID</th>
+            <th>操作系统</th>
+            <th>操作</th>
+        </tr>
+        <tr ng-repeat="m in apps">
+            <td>{{m.name}}</td>
+            <td>{{m.id}}</td>
+            <td>{{m.soft}}</td>
+            <td ng-click="">管理</td>
+        </tr>
+        <!--<tr>
+            <td>演示应用</td>
+            <td>380-1</td>
+            <td>android</td>
+            <td>管理</td>
+        </tr>-->
+    </table>
+</div>
+<div class="mask" ng-hide="myShow">
+    <div class="dialog">
+        <div class="dia-title">
+            <h4>创建应用</h4>
+            <span ng-click="myShow = true">X</span>
+        </div>
+        <div class="dia-con">
+            <div>
+                <span>*</span>
+                <label for="text">应用名称</label>
+                <input type="text" id="text" ng-model="myName">
+            </div>
+            <div>
+                <span>*</span>
+                <label for="text">应用类型</label>
+                <select name="" id="" ng-model="myType" ng-options="type.name for type in types">
+                    <!--<option value="休闲娱乐">休闲娱乐</option>
+                    <option value="休闲娱乐">休闲娱乐</option>
+                    <option value="休闲娱乐">休闲娱乐</option>
+                    <option value="娱乐">娱乐</option>-->
+                </select>
+            </div>
+        </div>
+        <div class="btns">
+            <button class="btn-sure" ng-click="save()">确定</button>
+            <button class="btn-cancel" ng-click="myShow=true">取消</button>
+        </div>
+    </div>
+</div>
